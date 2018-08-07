@@ -1,8 +1,12 @@
 import ScalaModulePlugin._
 
-crossScalaVersions in ThisBuild := List("2.13.0-M4")
+crossScalaVersions in ThisBuild := List("2.13.0-pre-477998f")
 
-val disableDocs = sys.props("nodocs") == "true"
+scalaVersion := "2.13.0-pre-47b4224"
+
+resolvers += "scala-pr" at "https://scala-ci.typesafe.com/artifactory/scala-integration/"
+
+val disableDocs = true //sys.props("nodocs") == "true"
 
 lazy val JavaDoc = config("genjavadoc") extend Compile
 
